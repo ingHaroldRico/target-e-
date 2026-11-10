@@ -1,0 +1,67 @@
+
+//crear un array con 4 menús (4 objetos con nombre, precio, imagen, boton de comprar)
+//imprimir desde .js cada uno de los productos en un div. tienen que usar un ciclo  que recorra el array 
+//y o agregue en un contenedor. usar estilos. todo con el appenChild. agregr el corazon de me encanta y que cambie
+// en el html solo el dvi y el css
+
+menu=[
+    {nombre:"Hamburguesa", precio: 15000, imagen:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNIFBOhpomdD-LhktJkFsrMWtyd8vTNT_wArjA_4osxg&s=10"},
+    {nombre:"Perro Sencillo", precio: 8000, imagen:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUWhPpbLjec8VJe9gYlIUdeWveWl5plr0ymG_XRHi5gw&s=10"},
+    {nombre:"Perro suizo", precio: 12000, imagen:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKaubpumDCw6RM7imkqE8ST6iXmXbQH5s5_dO51wvGwg&s=10"},
+    {nombre:"Desgranado", precio: 20000, imagen:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS-5pFBnapMMjt2eSl21TLpPDLVTExnEFM55X1dsmTlg&s=10"},
+    {nombre:"Salchipapa", precio: 25000, imagen:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbv8tWweshGTebkaIsbH5quOGtATtoPKGuUJ2q72s67A&s=10"}
+]
+
+menu.forEach(element =>  {
+    // console.table(element);
+    const plato=document.createElement("div");
+    plato.classList.add("div-hijo");
+    const nombre=document.createElement("h4");
+    nombre.textContent="Nombre: " + element.nombre;
+    const precio=document.createElement("h4");
+    precio.textContent="Precio: " + element.precio;
+    const imagenaux=document.createElement("img");
+    imagenaux.src=element.imagen;
+    
+   
+    
+
+    const boton=document.createElement("button")
+    boton.textContent="Eliminar";
+    boton.classList.add("btn_hijo")
+    
+    plato.appendChild(nombre);
+    plato.appendChild(precio);
+    // plato.appendChild(imagen);
+    plato.appendChild(imagenaux);
+    plato.appendChild(boton);
+    
+  
+    document.querySelector(".contenedor").appendChild(plato);
+   
+
+
+});
+
+// document.querySelector(".contenedor").lastElementChild.remove();
+const padre=document.querySelector(".contenedor");
+padre.addEventListener('click', (e)=>{
+    if(e.target.classList.contains("btn_hijo")){
+        const btn_precionado=e.target.parentElement;
+        btn_precionado.remove();
+        console.log("Plato Eliminado");
+    }
+})
+
+const formulario=document.querySelector("#form");
+formulario.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    const input=document.querySelector("input");
+    const pedido=input.value.toLocaleLowerCase();
+    const item=document.createElement("li");
+    item.textContent=pedido;
+    const lista=document.querySelector(".listado");
+    lista.appendChild(item);
+  
+});
+
