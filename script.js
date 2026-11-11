@@ -62,6 +62,18 @@ padre.addEventListener('click', (e)=>{
         console.log("Plato Eliminado");
     }
 })
+const padrediv=document.querySelector(".contenedor")
+padrediv.addEventListener('click', (e)=>{
+    if(e.target.classList.contains("btn_hijo2")){
+        const btn_precionado=e.target.parentElement;
+        const comprar=btn_precionado.parentElement;
+        const hijo=document.createElement("h4");
+        hijo.textContent="--Vendido--";
+        hijo.classList.add("vendido")
+        comprar.appendChild(hijo);
+        console.log("Plato Comprado");
+    }
+})
 
 const formulario=document.querySelector("#form");
 formulario.addEventListener('submit', (e)=>{
