@@ -69,9 +69,11 @@ padrediv.addEventListener('click', (e)=>{
         const comprar=btn_precionado.parentElement;
         const hijo=document.createElement("h4");
         hijo.textContent="--Vendido--";
+        
         hijo.classList.add("vendido")
         comprar.appendChild(hijo);
         console.log("Plato Comprado");
+        
     }
 })
 
