@@ -19,22 +19,31 @@ menu.forEach(element =>  {
     const nombre=document.createElement("h4");
     nombre.textContent=element.nombre;
     const precio=document.createElement("h4");
-    precio.textContent="Precio: " + element.precio;
+    precio.textContent="Precio: $ " + element.precio;
     const imagenaux=document.createElement("img");
     imagenaux.src=element.imagen;
     
-   
-    
+    const div=document.createElement("div");
+    div.classList.add("botones");
 
     const boton=document.createElement("button")
     boton.textContent="Eliminar";
     boton.classList.add("btn_hijo")
+
+    const boton2=document.createElement("button");
+    boton2.textContent="Comprar";
+    boton2.classList.add("btn_hijo2")
     
     plato.appendChild(nombre);
     plato.appendChild(precio);
     // plato.appendChild(imagen);
     plato.appendChild(imagenaux);
-    plato.appendChild(boton);
+
+    div.appendChild(boton2);
+    div.appendChild(boton);
+    
+
+    plato.appendChild(div);
     
   
     document.querySelector(".contenedor").appendChild(plato);
@@ -48,7 +57,8 @@ const padre=document.querySelector(".contenedor");
 padre.addEventListener('click', (e)=>{
     if(e.target.classList.contains("btn_hijo")){
         const btn_precionado=e.target.parentElement;
-        btn_precionado.remove();
+        const eliminar=btn_precionado.parentElement;
+        eliminar.remove();
         console.log("Plato Eliminado");
     }
 })
