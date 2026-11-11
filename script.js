@@ -8,7 +8,7 @@ menu=[
     {nombre:"Hamburguesa", precio: 15000, imagen:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNIFBOhpomdD-LhktJkFsrMWtyd8vTNT_wArjA_4osxg&s=10"},
     {nombre:"Perro Sencillo", precio: 8000, imagen:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUWhPpbLjec8VJe9gYlIUdeWveWl5plr0ymG_XRHi5gw&s=10"},
     {nombre:"Perro suizo", precio: 12000, imagen:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKaubpumDCw6RM7imkqE8ST6iXmXbQH5s5_dO51wvGwg&s=10"},
-    {nombre:"Desgranado", precio: 20000, imagen:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS-5pFBnapMMjt2eSl21TLpPDLVTExnEFM55X1dsmTlg&s=10"},
+    {nombre:"Desgranado", precio: 20000, imagen:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPcCFq9uweU6AGTX605R9A64c-q9Z1Ow4e9Vg6qAb8cVqwPdd6roo49C9Fl-PMBPlWly7bR0ShEVLUj4YoBzBmzjsI_veTHkupYoyKoDu0&s=10"},
     {nombre:"Salchipapa", precio: 25000, imagen:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbv8tWweshGTebkaIsbH5quOGtATtoPKGuUJ2q72s67A&s=10"}
 ]
 
@@ -17,7 +17,7 @@ menu.forEach(element =>  {
     const plato=document.createElement("div");
     plato.classList.add("div-hijo");
     const nombre=document.createElement("h4");
-    nombre.textContent="Nombre: " + element.nombre;
+    nombre.textContent=element.nombre;
     const precio=document.createElement("h4");
     precio.textContent="Precio: " + element.precio;
     const imagenaux=document.createElement("img");
